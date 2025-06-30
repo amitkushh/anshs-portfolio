@@ -13,11 +13,11 @@ export const About = () => {
           <h4 className="text-lg font-semibold text-white mb-3">🏆 Key Achievements</h4>
           <ul className="text-gray-300 space-y-2">
             <li>• Maintainer-level contributions to <strong className="text-white">TSCircuit</strong> and <strong className="text-white">Mediar-AI</strong></li>
-            <li>• <span className="text-blue-400 font-bold">Receiving <strong className="text-white">$200+ per month</strong> in <a href="https://github.com/sponsors/Anshgrover23" className="underline hover:text-blue-300 transition-colors">GitHub Sponsorships</a></span> — fueling my open source work!</li>
+            <li>• <span className="text-accent font-bold">Receiving <strong className="text-white">$200+ per month</strong> in <a href="https://github.com/sponsors/Anshgrover23" className="underline hover:text-accent transition-colors">GitHub Sponsorships</a></span> — fueling my open source work!</li>
             <li>• Built tools used by thousands of developers</li>
           </ul>
           <div className="mt-4">
-            <a href="https://github.com/sponsors/Anshgrover23" target="_blank" rel="noopener noreferrer" className="inline-block bg-pink-600 hover:bg-pink-500 text-white font-semibold px-4 py-2 rounded transition-colors shadow-lg">
+            <a href="https://github.com/sponsors/Anshgrover23" target="_blank" rel="noopener noreferrer" className="inline-block bg-accent text-accent-foreground hover:bg-primary hover:text-primary-foreground font-semibold px-4 py-2 rounded transition-colors shadow-lg">
               Sponsor me on GitHub
             </a>
           </div>
