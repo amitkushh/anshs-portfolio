@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { CompanyModal } from "./CompanyModal";
 
@@ -121,7 +120,7 @@ export const Experience = () => {
         {experiences.map((exp, index) => (
           <div 
             key={index} 
-            className="flex items-start gap-4 p-6 rounded-lg bg-gray-900/50 hover:bg-gray-900/70 transition-all duration-300 cursor-pointer"
+            className="flex items-start gap-4 p-6 rounded-lg bg-gray-900/50 hover:bg-gray-900/70 transition-all duration-300 cursor-pointer relative"
             onClick={() => setSelectedCompany(exp.company)}
           >
             <div className="text-3xl">{exp.logo}</div>
@@ -151,6 +150,27 @@ export const Experience = () => {
                 </div>
               </div>
               <p className="text-blue-400 text-sm mt-2">Click to view featured contributions →</p>
+              {/* Language badges bottom right (responsive) */}
+              {exp.company === "TSCircuit" && (
+                <div className="flex gap-2 mt-4 md:mt-0 md:absolute md:right-6 md:bottom-4 md:flex-row flex-col items-center md:items-end justify-center">
+                  <span className="flex items-center gap-1 px-3 py-1 rounded-full backdrop-blur-md bg-white/10 border border-blue-400/30 shadow-lg text-blue-200 text-xs font-semibold transition-transform transform hover:scale-105 hover:bg-blue-700/30">
+                    <svg width="16" height="16" fill="currentColor" className="text-blue-400"><path d="M2 2h12v12H2z" fill="none"/><path d="M4 8l2 2 4-4" stroke="currentColor" strokeWidth="2" fill="none"/></svg>
+                    TypeScript
+                  </span>
+                  <span className="flex items-center gap-1 px-3 py-1 rounded-full backdrop-blur-md bg-white/10 border border-cyan-400/30 shadow-lg text-cyan-200 text-xs font-semibold transition-transform transform hover:scale-105 hover:bg-cyan-700/30">
+                    <svg width="16" height="16" fill="currentColor" className="text-cyan-400"><circle cx="8" cy="8" r="7" stroke="currentColor" strokeWidth="2" fill="none"/><circle cx="8" cy="8" r="3" fill="currentColor"/></svg>
+                    React.js
+                  </span>
+                </div>
+              )}
+              {exp.company === "Mediar-AI" && (
+                <div className="flex gap-2 mt-4 md:mt-0 md:absolute md:right-6 md:bottom-4 md:flex-row flex-col items-center md:items-end justify-center">
+                  <span className="flex items-center gap-1 px-3 py-1 rounded-full backdrop-blur-md bg-white/10 border border-orange-400/30 shadow-lg text-orange-200 text-xs font-semibold transition-transform transform hover:scale-105 hover:bg-orange-700/30">
+                    <svg width="16" height="16" fill="currentColor" className="text-orange-400"><circle cx="8" cy="8" r="7" stroke="currentColor" strokeWidth="2" fill="none"/><text x="8" y="12" textAnchor="middle" fontSize="10" fill="currentColor">🦀</text></svg>
+                    Rust
+                  </span>
+                </div>
+              )}
             </div>
           </div>
         ))}

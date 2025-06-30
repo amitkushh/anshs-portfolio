@@ -1,4 +1,3 @@
-
 import { Badge } from "@/components/ui/badge";
 
 export const Skills = () => {
@@ -20,7 +19,8 @@ export const Skills = () => {
         { name: "Express.js", icon: "🚂" },
         { name: "PostgreSQL", icon: "🐘" },
         { name: "REST APIs", icon: "🔄" },
-        { name: "JWT Auth", icon: "🔐" }
+        { name: "JWT Auth", icon: "🔐" },
+        { name: "Rust", icon: "🦀" }
       ]
     },
     {
