@@ -194,6 +194,14 @@ export const Experience = () => {
               </div>
               <p className="text-blue-400 text-sm mt-2">Click to view featured contributions →</p>
               {/* Language badges bottom right (responsive) */}
+              {exp.company === "antiwork" && (
+                <div className="flex gap-2 mt-4 md:mt-0 md:absolute md:right-6 md:bottom-4 md:flex-row flex-col items-center md:items-end justify-center">
+                  <span className="flex items-center gap-1 px-3 py-1 rounded-full backdrop-blur-md bg-white/10 border border-blue-400/30 shadow-lg text-blue-200 text-xs font-semibold transition-transform transform hover:scale-105 hover:bg-blue-700/30">
+                    <svg width="16" height="16" fill="currentColor" className="text-blue-400"><path d="M2 2h12v12H2z" fill="none"/><path d="M4 8l2 2 4-4" stroke="currentColor" strokeWidth="2" fill="none"/></svg>
+                    TypeScript
+                  </span>
+                </div>
+              )}
               {exp.company === "TSCircuit" && (
                 <div className="flex gap-2 mt-4 md:mt-0 md:absolute md:right-6 md:bottom-4 md:flex-row flex-col items-center md:items-end justify-center">
                   <span className="flex items-center gap-1 px-3 py-1 rounded-full backdrop-blur-md bg-white/10 border border-blue-400/30 shadow-lg text-blue-200 text-xs font-semibold transition-transform transform hover:scale-105 hover:bg-blue-700/30">
