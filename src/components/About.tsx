@@ -14,6 +14,7 @@ export const About = () => {
           <ul className="text-gray-300 space-y-2">
             <li>• Maintainer-level contributions to <strong className="text-white">TSCircuit</strong> and <strong className="text-white">Mediar-AI</strong></li>
             <li>• <span className="text-accent font-bold">Receiving <strong className="text-white">$200+ per month</strong> in <a href="https://github.com/sponsors/Anshgrover23" className="underline hover:text-accent transition-colors">GitHub Sponsorships</a></span> — fueling my open source work!</li>
+            <li>• Awarded a <strong className="text-white">$1000 bounty</strong> via <a href="https://collective.flexile.xyz/" className="underline hover:text-accent transition-colors">Flexile Collective</a> for contributions to <strong className="text-white">antiwork/helper</strong></li>
             <li>• Built tools used by thousands of developers</li>
           </ul>
           <div className="mt-4">

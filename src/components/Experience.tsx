@@ -6,6 +6,44 @@ export const Experience = () => {
 
   const experiences = [
     {
+      company: "antiwork",
+      role: "Open Source Contributor",
+      period: "2024 - Present",
+      description: "Worked on converting the antiwork/helper app from multi-tenant to single-tenant mailbox logic. All PRs merged. Received bounty/payment via antiwork's own platform, Flexile.",
+      logo: "🛠️",
+      link: "https://github.com/antiwork/helper",
+      totalPRs: "5+",
+      totalBounties: "$1000 (Flexile)",
+      contributions: [
+        {
+          title: "refactor: rename mailboxId to unused_mailboxId",
+          description: "Renamed mailboxId to unused_mailboxId for clarity and future-proofing.",
+          link: "https://github.com/antiwork/helper/pull/706",
+          bounty: "$1000 bounty via Flexile Collective (approved, to be merged)"
+        },
+        {
+          title: "refactor: replace getMailboxById/getMailboxBySlug with getMailbox",
+          description: "Simplified mailbox retrieval logic by consolidating functions.",
+          link: "https://github.com/antiwork/helper/pull/704"
+        },
+        {
+          title: "Remove mailbox switcher dropdown and mailboxes.list procedure",
+          description: "Streamlined the UI by removing unnecessary mailbox switcher and related backend procedure.",
+          link: "https://github.com/antiwork/helper/pull/703"
+        },
+        {
+          title: "Fix: status dot colors for open (green), closed (gray), and spam (red) in conversation filter dropdown",
+          description: "Improved status dot color coding for better visual clarity in the conversation filter dropdown.",
+          link: "https://github.com/antiwork/helper/pull/683"
+        },
+        {
+          title: "fix: modal overlay lighter for better UI/UX",
+          description: "Enhanced modal overlay for a lighter, more user-friendly appearance.",
+          link: "https://github.com/antiwork/helper/pull/684"
+        }
+      ]
+    },
+    {
       company: "TSCircuit",
       role: "Open Source Contributor",
       period: "2024 - Present",
@@ -96,20 +134,25 @@ export const Experience = () => {
   ];
 
   const companyData = {
+    "antiwork": {
+      name: "antiwork",
+      logo: "🛠️",
+      contributions: experiences[0].contributions
+    },
     "TSCircuit": {
       name: "TSCircuit",
       logo: "🔌",
-      contributions: experiences[0].contributions
+      contributions: experiences[1].contributions
     },
     "Mediar-AI": {
       name: "Mediar-AI", 
       logo: "🤖",
-      contributions: experiences[1].contributions
+      contributions: experiences[2].contributions
     },
     "Algora.io": {
       name: "Algora.io",
       logo: "💰", 
-      contributions: experiences[2].contributions
+      contributions: experiences[3].contributions
     }
   };
 
@@ -120,7 +163,7 @@ export const Experience = () => {
         {experiences.map((exp, index) => (
           <div 
             key={index} 
-            className="flex items-start gap-4 p-6 rounded-lg bg-gray-900/50 hover:bg-gray-900/70 transition-all duration-300 cursor-pointer relative"
+            className={`flex items-start gap-4 p-6 rounded-lg bg-gray-900/50 hover:bg-gray-900/70 transition-all duration-300 cursor-pointer relative ${exp.company === 'antiwork' ? 'border-2 border-purple-500 shadow-[0_0_16px_4px_rgba(168,85,247,0.5)]' : ''}`}
             onClick={() => setSelectedCompany(exp.company)}
           >
             <div className="text-3xl">{exp.logo}</div>
