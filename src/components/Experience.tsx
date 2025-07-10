@@ -8,9 +8,9 @@ export const Experience = () => {
     {
       company: "antiwork",
       role: "Open Source Contributor",
-      period: "2024 - Present",
-      description: "Worked on converting the antiwork/helper app from multi-tenant to single-tenant mailbox logic. All PRs merged. Received bounty/payment via antiwork's own platform, Flexile.",
-      logo: "🛠️",
+      period: "2025 - Present",
+      description: "switch mailbox from multi-tenant to single-tenant logic.",
+      logo: "antiwork.png",
       link: "https://github.com/antiwork/helper",
       totalPRs: "5+",
       totalBounties: "$1000 (Flexile)",
@@ -48,7 +48,7 @@ export const Experience = () => {
       role: "Open Source Contributor",
       period: "2024 - Present",
       description: "Contributing to circuit design tools and testing infrastructure",
-      logo: "🔌",
+      logo: "tscircuit.png",
       link: "https://tscircuit.com/",
       totalPRs: "100+",
       totalBounties: "$809+",
@@ -83,7 +83,7 @@ export const Experience = () => {
       role: "Open Source Contributor", 
       period: "2024 - Present",
       description: "Building AI-powered media processing tools",
-      logo: "🤖",
+      logo: "mediar-ai.png",
       link: "https://www.mediar.ai/",
       totalPRs: "20+",
       totalBounties: "$250+",
@@ -118,7 +118,7 @@ export const Experience = () => {
       role: "Bounty Hunter",
       period: "2024 - Present", 
       description: "Earned $1099+ in bounties by solving development challenges",
-      logo: "💰",
+      logo: "algora.png",
       link: "https://algora.io/Anshgrover23",
       totalPRs: "33+",
       totalBounties: "$1099+",
@@ -158,7 +158,7 @@ export const Experience = () => {
 
   return (
     <section className="mb-16">
-      <h2 className="text-3xl font-bold mb-8 text-white">Cool places I worked at</h2>
+      <h2 className="text-3xl font-bold mb-8 text-white">Cool places I contributed at</h2>
       <div className="space-y-6">
         {experiences.map((exp, index) => (
           <div 
@@ -166,7 +166,13 @@ export const Experience = () => {
             className={`flex items-start gap-4 p-6 rounded-lg bg-gray-900/50 hover:bg-gray-900/70 transition-all duration-300 cursor-pointer relative ${exp.company === 'antiwork' ? 'border-2 border-purple-500 shadow-[0_0_16px_4px_rgba(168,85,247,0.5)]' : ''}`}
             onClick={() => setSelectedCompany(exp.company)}
           >
-            <div className="text-3xl">{exp.logo}</div>
+            <div className="text-3xl">
+              {typeof exp.logo === 'string' && exp.logo.endsWith('.png') ? (
+                <img src={`/${exp.logo}`} alt={`${exp.company} logo`} className="w-8 h-8 rounded-full object-contain inline-block align-middle" />
+              ) : (
+                exp.logo
+              )}
+            </div>
             <div className="flex-1">
               <div className="flex items-center justify-between mb-2">
                 <a 

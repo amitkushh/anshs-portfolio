@@ -5,7 +5,7 @@ export const About = () => {
       <div className="space-y-6">
         <div className="text-gray-300 leading-relaxed">
           <p>
-            I'm <strong className="text-white">Ansh Grover</strong> — a self-driven developer who turns curiosity into code. With over <strong className="text-white">199+ merged PRs</strong> and <strong className="text-white">$1099+ in bounties</strong> earned via <a href="https://algora.io/Anshgrover23" className="text-purple-400 hover:text-purple-300 transition-colors underline">Algora.io</a>, I specialize in full-stack development, testing infrastructure, and developer tooling.
+            I'm <strong className="text-white">Ansh Grover</strong> — a TypeScript developer/Bounty Hunter. With over <strong className="text-white">212+ merged PRs</strong> and <strong className="text-white">$1099+ in bounties</strong> earned via <a href="https://algora.io/Anshgrover23" className="text-purple-400 hover:text-purple-300 transition-colors underline">Algora.io</a>, I specialize in full-stack development, testing infrastructure, and developer tooling.
           </p>
         </div>
 

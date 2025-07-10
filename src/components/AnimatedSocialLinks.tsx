@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, ExternalLink } from "lucide-react";
+import { Github, Mail, ExternalLink } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
 import { useState } from "react";
 
@@ -17,12 +17,6 @@ export const AnimatedSocialLinks = () => {
       href: "https://twitter.com/Anshgrover23", 
       label: "Twitter",
       color: "hover:bg-blue-900"
-    },
-    { 
-      icon: Linkedin, 
-      href: "https://linkedin.com/in/anshgrover", 
-      label: "LinkedIn",
-      color: "hover:bg-blue-600"
     },
     { 
       icon: Mail, 
