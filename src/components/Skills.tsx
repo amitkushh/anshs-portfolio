@@ -6,6 +6,7 @@ export const Skills = () => {
       title: "🛠️ Frontend Development",
       skills: [
         { name: "React.js", icon: "⚛️" },
+        { name: "Next.js", icon: "⚛" },
         { name: "TypeScript", icon: "📘" },
         { name: "TailwindCSS", icon: "🎨" },
         { name: "Vite", icon: "⚡" },
@@ -17,10 +18,11 @@ export const Skills = () => {
       skills: [
         { name: "Node.js", icon: "📦" },
         { name: "Express.js", icon: "🚂" },
+        { name: "Rust", icon: "🦀" },
+        { name: "Ruby", icon: "♦️" },
         { name: "PostgreSQL", icon: "🐘" },
         { name: "REST APIs", icon: "🔄" },
-        { name: "JWT Auth", icon: "🔐" },
-        { name: "Rust", icon: "🦀" }
+        { name: "JWT Auth", icon: "🔐" }
       ]
     },
     {

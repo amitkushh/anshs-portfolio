@@ -9,17 +9,17 @@ export const Experience = () => {
       company: "antiwork",
       role: "Open Source Contributor",
       period: "2025 - Present",
-      description: "switch mailbox from multi-tenant to single-tenant logic.",
+      description: "Refactored mailbox logic, improved UI/UX, added equity management.",
       logo: "antiwork.png",
       link: "https://github.com/antiwork/helper",
-      totalPRs: "5+",
-      totalBounties: "$1000 (Flexile)",
+      totalPRs: "9+",
+      totalBounties: "$6000 (Flexile)",
       contributions: [
         {
           title: "refactor: rename mailboxId to unused_mailboxId",
           description: "Renamed mailboxId to unused_mailboxId for clarity and future-proofing.",
           link: "https://github.com/antiwork/helper/pull/706",
-          bounty: "$1000 bounty via Flexile Collective (approved, to be merged)"
+          bounty: "$6000 bounty via Flexile(their own contractor payment platform)"
         },
         {
           title: "refactor: replace getMailboxById/getMailboxBySlug with getMailbox",
@@ -40,6 +40,26 @@ export const Experience = () => {
           title: "fix: modal overlay lighter for better UI/UX",
           description: "Enhanced modal overlay for a lighter, more user-friendly appearance.",
           link: "https://github.com/antiwork/helper/pull/684"
+        },
+        {
+          title: "feat: add equity management feature in settings",
+          description: "Implemented comprehensive equity management functionality in the settings panel.",
+          link: "https://github.com/antiwork/flexile/pull/673"
+        },
+        {
+          title: "refactor: consolidate equity flags into equity_enabled",
+          description: "Streamlined equity-related configuration by consolidating multiple flags into a single equity_enabled flag.",
+          link: "https://github.com/antiwork/flexile/pull/660"
+        },
+        {
+          title: "fix: build failing on frontend",
+          description: "Resolved frontend build issues(minor PR)",
+          link: "https://github.com/antiwork/flexile/pull/651"
+        },
+        {
+          title: "remove use of companyUpdatesEnabled flag",
+          description: "Removed companyUpdatesEnabled flag to become companyUpdates always true.",
+          link: "https://github.com/antiwork/flexile/pull/641"
         }
       ]
     },
@@ -80,9 +100,9 @@ export const Experience = () => {
     },
     {
       company: "Mediar-AI",
-      role: "Open Source Contributor", 
+      role: "Open Source Contributor",
       period: "2024 - Present",
-      description: "Building AI-powered media processing tools",
+      description: "Built dev tools, automation scripts, and published Screenpipe to Homebrew.",
       logo: "mediar-ai.png",
       link: "https://www.mediar.ai/",
       totalPRs: "20+",
@@ -116,8 +136,8 @@ export const Experience = () => {
     {
       company: "Algora.io",
       role: "Bounty Hunter",
-      period: "2024 - Present", 
-      description: "Earned $1099+ in bounties by solving development challenges",
+      period: "2024 - Present",
+      description: "Earned $1099+ in bounties by solving github issues.",
       logo: "algora.png",
       link: "https://algora.io/Anshgrover23",
       totalPRs: "33+",
@@ -145,24 +165,24 @@ export const Experience = () => {
       contributions: experiences[1].contributions
     },
     "Mediar-AI": {
-      name: "Mediar-AI", 
+      name: "Mediar-AI",
       logo: "🤖",
       contributions: experiences[2].contributions
     },
     "Algora.io": {
       name: "Algora.io",
-      logo: "💰", 
+      logo: "💰",
       contributions: experiences[3].contributions
     }
   };
 
   return (
     <section className="mb-16">
-      <h2 className="text-3xl font-bold mb-8 text-white">Cool places I contributed at</h2>
+      <h2 className="text-3xl font-bold mb-8 text-white">Cool places I’ve contributed to</h2>
       <div className="space-y-6">
         {experiences.map((exp, index) => (
-          <div 
-            key={index} 
+          <div
+            key={index}
             className={`flex items-start gap-4 p-6 rounded-lg bg-gray-900/50 hover:bg-gray-900/70 transition-all duration-300 cursor-pointer relative ${exp.company === 'antiwork' ? 'border-2 border-purple-500 shadow-[0_0_16px_4px_rgba(168,85,247,0.5)]' : ''}`}
             onClick={() => setSelectedCompany(exp.company)}
           >
@@ -175,7 +195,7 @@ export const Experience = () => {
             </div>
             <div className="flex-1">
               <div className="flex items-center justify-between mb-2">
-                <a 
+                <a
                   href={exp.link}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -203,19 +223,33 @@ export const Experience = () => {
               {exp.company === "antiwork" && (
                 <div className="flex gap-2 mt-4 md:mt-0 md:absolute md:right-6 md:bottom-4 md:flex-row flex-col items-center md:items-end justify-center">
                   <span className="flex items-center gap-1 px-3 py-1 rounded-full backdrop-blur-md bg-white/10 border border-blue-400/30 shadow-lg text-blue-200 text-xs font-semibold transition-transform transform hover:scale-105 hover:bg-blue-700/30">
-                    <svg width="16" height="16" fill="currentColor" className="text-blue-400"><path d="M2 2h12v12H2z" fill="none"/><path d="M4 8l2 2 4-4" stroke="currentColor" strokeWidth="2" fill="none"/></svg>
+                    <svg width="16" height="16" fill="currentColor" className="text-blue-400"><path d="M2 2h12v12H2z" fill="none" /><path d="M4 8l2 2 4-4" stroke="currentColor" strokeWidth="2" fill="none" /></svg>
                     TypeScript
                   </span>
+                  <span className="flex items-center gap-1 px-3 py-1 rounded-full backdrop-blur-md bg-white/10 border border-zinc-400/30 shadow-lg text-zinc-200 text-xs font-semibold transition-transform transform hover:scale-105 hover:bg-zinc-700/30">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="12" fill="none" stroke="currentColor" strokeWidth="2" />
+                      <path d="M7 17 L12 7 L17 17 M17 7 V17" stroke="currentColor" strokeWidth="2" fill="none" />
+                    </svg>
+                    Next.js
+                  </span>
+                  <span className="flex items-center gap-1 px-3 py-1 rounded-full backdrop-blur-md bg-white/10 border border-rose-400/30 shadow-lg text-rose-200 text-xs font-semibold transition-transform transform hover:scale-105 hover:bg-rose-700/30">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 198 198">
+                      <path d="M99 0 L18 59 L99 198 L180 59 Z M99 20 L170 58 L99 178 L28 58 Z" />
+                    </svg>
+                    Ruby
+                  </span>
+
                 </div>
               )}
               {exp.company === "TSCircuit" && (
                 <div className="flex gap-2 mt-4 md:mt-0 md:absolute md:right-6 md:bottom-4 md:flex-row flex-col items-center md:items-end justify-center">
                   <span className="flex items-center gap-1 px-3 py-1 rounded-full backdrop-blur-md bg-white/10 border border-blue-400/30 shadow-lg text-blue-200 text-xs font-semibold transition-transform transform hover:scale-105 hover:bg-blue-700/30">
-                    <svg width="16" height="16" fill="currentColor" className="text-blue-400"><path d="M2 2h12v12H2z" fill="none"/><path d="M4 8l2 2 4-4" stroke="currentColor" strokeWidth="2" fill="none"/></svg>
+                    <svg width="16" height="16" fill="currentColor" className="text-blue-400"><path d="M2 2h12v12H2z" fill="none" /><path d="M4 8l2 2 4-4" stroke="currentColor" strokeWidth="2" fill="none" /></svg>
                     TypeScript
                   </span>
                   <span className="flex items-center gap-1 px-3 py-1 rounded-full backdrop-blur-md bg-white/10 border border-cyan-400/30 shadow-lg text-cyan-200 text-xs font-semibold transition-transform transform hover:scale-105 hover:bg-cyan-700/30">
-                    <svg width="16" height="16" fill="currentColor" className="text-cyan-400"><circle cx="8" cy="8" r="7" stroke="currentColor" strokeWidth="2" fill="none"/><circle cx="8" cy="8" r="3" fill="currentColor"/></svg>
+                    <svg width="16" height="16" fill="currentColor" className="text-cyan-400"><circle cx="8" cy="8" r="7" stroke="currentColor" strokeWidth="2" fill="none" /><circle cx="8" cy="8" r="3" fill="currentColor" /></svg>
                     React.js
                   </span>
                 </div>
@@ -223,7 +257,7 @@ export const Experience = () => {
               {exp.company === "Mediar-AI" && (
                 <div className="flex gap-2 mt-4 md:mt-0 md:absolute md:right-6 md:bottom-4 md:flex-row flex-col items-center md:items-end justify-center">
                   <span className="flex items-center gap-1 px-3 py-1 rounded-full backdrop-blur-md bg-white/10 border border-orange-400/30 shadow-lg text-orange-200 text-xs font-semibold transition-transform transform hover:scale-105 hover:bg-orange-700/30">
-                    <svg width="16" height="16" fill="currentColor" className="text-orange-400"><circle cx="8" cy="8" r="7" stroke="currentColor" strokeWidth="2" fill="none"/><text x="8" y="12" textAnchor="middle" fontSize="10" fill="currentColor">🦀</text></svg>
+                    <svg width="16" height="16" fill="currentColor" className="text-orange-400"><circle cx="8" cy="8" r="7" stroke="currentColor" strokeWidth="2" fill="none" /><text x="8" y="12" textAnchor="middle" fontSize="10" fill="currentColor">🦀</text></svg>
                     Rust
                   </span>
                 </div>

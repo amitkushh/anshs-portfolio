@@ -10,7 +10,7 @@ export const Hero = () => {
             Hi, Ansh here
           </h1>
           <p className="text-xl text-gray-400">
-            Turning curiosity into code & contributions into impact 📍Rajasthan, India
+            Building open-source dev tools & automations 📍Rajasthan, India
           </p>
         </div>
         <Avatar className="w-24 h-24">

@@ -1,6 +1,6 @@
 # Ansh Grover's Portfolio
 
-A modern, fast, and beautiful portfolio site built with React, TypeScript, Vite, shadcn-ui, and Tailwind CSS.
+My very own portfolio website.
 
 ## Features
 - ⚡️ Blazing fast with Vite
@@ -39,4 +39,4 @@ npm run build
 
 ---
 
-Feel free to fork, star, or contribute!
+Feel free to fork, star, or contribute! Don't forget to follow me as well.
