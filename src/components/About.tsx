@@ -5,7 +5,7 @@ export const About = () => {
       <div className="space-y-6">
         <div className="text-gray-300 leading-relaxed">
           <p>
-            I'm <strong className="text-white">Ansh Grover</strong> — a <strong className="text-white">full-stack developer focused on TypeScript</strong>, testing infrastructure, and developer experience — currently shipping across React, Rust, and Ruby.
+            I'm <strong className="text-white">Ansh Grover</strong> — <strong className="text-white">full-stack developer focusing on TypeScript</strong>, testing infrastructure, and developer experience — currently shipping across React, Rust, and Ruby.
           </p>
         </div>
 

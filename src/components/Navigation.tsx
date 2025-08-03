@@ -35,62 +35,80 @@ export const Navigation = () => {
   }, [hoveredIndex]);
 
   return (
-    <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50">
-      <div className="bg-gray-900/80 backdrop-blur-md rounded-full px-3 py-1.5 border border-gray-700 relative">
-        <div className="hidden md:flex items-center gap-4 relative">
-          <div
-            className="absolute top-0 h-full bg-white/10 rounded-full transition-all duration-300 ease-out"
-            style={{
-              left: highlightStyle.left,
-              width: highlightStyle.width,
-              opacity: highlightStyle.opacity,
-              pointerEvents: 'none',
-            }}
-          />
-          {navItems.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <a
-                key={index}
-                href={item.href}
-                ref={el => (navRefs.current[index] = el)}
-                className="flex items-center gap-2 text-gray-300 hover:text-white transition-all duration-300 hover:scale-110 relative z-10 px-2 py-1"
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-              >
-                <Icon className="w-4 h-4" />
-                <span className="text-sm">{item.label}</span>
-              </a>
-            );
-          })}
+    <>
+      <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50">
+        <div className="bg-gray-900/80 backdrop-blur-md rounded-full px-3 py-1.5 border border-gray-700 relative">
+          <div className="hidden md:flex items-center gap-4 relative">
+            <div
+              className="absolute top-0 h-full bg-white/10 rounded-full transition-all duration-300 ease-out"
+              style={{
+                left: highlightStyle.left,
+                width: highlightStyle.width,
+                opacity: highlightStyle.opacity,
+                pointerEvents: 'none',
+              }}
+            />
+            {navItems.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <a
+                  key={index}
+                  href={item.href}
+                  ref={el => (navRefs.current[index] = el)}
+                  className="flex items-center gap-2 text-gray-300 hover:text-white transition-all duration-300 hover:scale-110 relative z-10 px-2 py-1"
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                >
+                  <Icon className="w-4 h-4" />
+                  <span className="text-sm">{item.label}</span>
+                </a>
+              );
+            })}
+          </div>
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
         </div>
-        <div className="md:hidden">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-gray-300 hover:text-white transition-colors"
-          >
-            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
-        </div>
-      </div>
+      </nav>
       {isOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 mt-2 bg-gray-900/90 backdrop-blur-md rounded-2xl p-4 border border-gray-700 animate-slide-in">
-          {navItems.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <a
-                key={index}
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-                className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors py-2"
-              >
-                <Icon className="w-4 h-4" />
-                <span>{item.label}</span>
-              </a>
-            );
-          })}
+        <div className="md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40">
+          <div className="fixed top-0 right-0 h-full w-64 bg-gray-900/95 backdrop-blur-md shadow-2xl transform transition-transform duration-300 ease-in-out">
+            <div className="flex flex-col h-full">
+              <div className="flex justify-end p-6">
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+              <div className="flex-1 px-6">
+                <div className="space-y-4">
+                  {navItems.map((item, index) => {
+                    const Icon = item.icon;
+                    return (
+                      <a
+                        key={index}
+                        href={item.href}
+                        onClick={() => setIsOpen(false)}
+                        className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors py-3 border-b border-gray-700/50 last:border-b-0"
+                      >
+                        <Icon className="w-5 h-5" />
+                        <span className="text-lg font-medium">{item.label}</span>
+                      </a>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       )}
-    </nav>
+    </>
   );
 };
