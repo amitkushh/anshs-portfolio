@@ -1,3 +1,4 @@
+"use client"
 import { Github, Mail, ExternalLink } from 'lucide-react';
 import { FaXTwitter } from 'react-icons/fa6';
 import { useState } from 'react';
