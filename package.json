@@ -9,7 +9,6 @@
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "preview": "vite preview",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
