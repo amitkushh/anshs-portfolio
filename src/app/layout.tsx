@@ -9,6 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://anshgrover.me'),
   title: 'anshs-portfolio',
   description: "Ansh Grover's personal portfolio website.",
   authors: [{ name: 'Ansh Grover', url: 'https://anshgrover.me/' }],
