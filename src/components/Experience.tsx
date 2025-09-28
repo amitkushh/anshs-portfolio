@@ -205,7 +205,7 @@ export const Experience = () => {
   return (
     <section className="mb-16">
       <h2 className="text-3xl font-bold mb-8 text-white">
-        Cool places I’ve contributed to
+        Cool places I've contributed to
       </h2>
       <div className="space-y-6">
         {experiences.map((exp, index) => (
