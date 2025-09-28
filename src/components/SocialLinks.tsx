@@ -1,3 +1,4 @@
+"use client"
 import { Home, Github, Mail, X } from 'lucide-react';
 
 export const SocialLinks = () => {

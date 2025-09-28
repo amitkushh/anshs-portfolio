@@ -1,3 +1,4 @@
+"use client"
 import { Hero } from '@/components/Hero';
 import { About } from '@/components/About';
 import { Experience } from '@/components/Experience';
@@ -7,7 +8,7 @@ import { Newsletter } from '@/components/Newsletter';
 import { Navigation } from '@/components/Navigation';
 import { AnimatedSocialLinks } from '@/components/AnimatedSocialLinks';
 
-const Index = () => {
+function Index() {
   return (
     <div className="min-h-screen bg-black text-white">
       <Navigation />
@@ -34,6 +35,6 @@ const Index = () => {
       <AnimatedSocialLinks />
     </div>
   );
-};
+}
 
 export default Index;
