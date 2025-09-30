@@ -2,14 +2,19 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 
+import Providers from '@/provider/providers';
+
 const inter = Inter({
   variable: '--font-inter',
   subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://anshgrover.me'),
   title: 'anshs-portfolio',
   description: "Ansh Grover's personal portfolio website.",
+  authors: [{ name: 'Ansh Grover', url: 'https://anshgrover.me/' }],
+
   icons: {
     icon: [
       { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
@@ -45,6 +50,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} antialiased`}>{children}</body>
+
+      <body className={`${inter.variable} antialiased`}>
+        <Providers> {children}</Providers>
+      </body>
     </html>
   );
 }

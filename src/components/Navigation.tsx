@@ -1,3 +1,4 @@
+"use client"
 import { useState, useRef, useLayoutEffect } from 'react';
 import {
   Home,
@@ -67,7 +68,7 @@ export const Navigation = () => {
                 <a
                   key={index}
                   href={item.href}
-                  ref={el => (navRefs.current[index] = el)}
+                  ref={el => {navRefs.current[index] = el}}
                   className="flex items-center gap-2 text-gray-300 hover:text-white transition-all duration-300 hover:scale-110 relative z-10 px-2 py-1"
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}

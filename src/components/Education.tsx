@@ -1,3 +1,4 @@
+"use client"
 export const Education = () => {
   return (
     <section className="mb-16">
