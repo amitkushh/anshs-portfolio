@@ -43,3 +43,24 @@ npm run build
 ---
 
 Feel free to fork, star, or contribute! Don't forget to follow me as well.
+
+### Mailchimp Configuration
+
+1. **Create a Mailchimp Account** (if you don't have one):
+   - Go to [mailchimp.com](https://mailchimp.com)
+   - Sign up for a free account
+
+2. **Get Your API Key**:
+   - Log in to your Mailchimp account
+   - Go to **Account** → **Extras** → **API Keys**
+   - Create a new API key or copy an existing one
+
+3. **Get Your Server Prefix**:
+   - In the same API Keys section, you'll see your server prefix
+   - It looks like `us1`, `us2`, `us3`, etc.
+   - This is the part before `.api.mailchimp.com` in your API endpoint
+
+4. **Get Your Audience List ID**:
+   - Go to **Audience** → **Settings** → **Audience name and defaults**
+   - Copy the **Audience ID** (this is your List ID)
+
