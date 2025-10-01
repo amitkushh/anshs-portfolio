@@ -3,7 +3,9 @@ export interface NewsletterResponse {
   data?: any;
 }
 
-export const subscribeToNewsletter = async (email: string): Promise<NewsletterResponse> => {
+export const subscribeToNewsletter = async (
+  email: string
+): Promise<NewsletterResponse> => {
   const response = await fetch('/api/subscribe', {
     method: 'POST',
     headers: {
@@ -13,8 +15,14 @@ export const subscribeToNewsletter = async (email: string): Promise<NewsletterRe
   });
 
   if (!response.ok) {
-    const errorData = await response.json();
-    throw new Error(errorData.error || 'Failed to subscribe to newsletter');
+    let errorMessage = 'Failed to subscribe to newsletter';
+    try {
+      const errorData = await response.json();
+      errorMessage = errorData.error || errorMessage;
+    } catch {
+      // Response body is not JSON, use default message
+    }
+    throw new Error(errorMessage);
   }
 
   return await response.json();
