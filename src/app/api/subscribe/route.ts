@@ -2,13 +2,25 @@ import { NextResponse } from 'next/server';
 
 export async function POST(req: Request) {
   try {
-    let { email } = await req.json();
+    let emailValue: unknown;
+    try {
+      const body = await req.json();
+      if (typeof body !== 'object' || body === null) {
+        throw new Error('Invalid payload');
+      }
+      emailValue = (body as { email?: unknown }).email;
+    } catch {
+      return NextResponse.json(
+        { error: 'Invalid request payload' },
+        { status: 400 }
+      );
+    }
 
-    if (typeof email !== 'string' || !email.trim()) {
+    if (typeof emailValue !== 'string' || !emailValue.trim()) {
       return NextResponse.json({ error: 'Email is required' }, { status: 400 });
     }
 
-    email = email.trim().toLowerCase();
+    const email = emailValue.trim().toLowerCase();
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
@@ -54,11 +66,11 @@ export async function POST(req: Request) {
 
     if (!response.ok) {
       let errorMessage = 'An error occurred while subscribing';
-      
+
       try {
         // Attempt to parse as JSON first
         const errorData = await response.json();
-        
+
         // Check for known error fields in order of preference
         if (errorData.detail) {
           errorMessage = errorData.detail;
@@ -74,13 +86,14 @@ export async function POST(req: Request) {
         // If JSON parsing fails, try to get text response
         try {
           const errorText = await response.text();
-          errorMessage = errorText || `Subscription failed (${response.status})`;
+          errorMessage =
+            errorText || `Subscription failed (${response.status})`;
         } catch (textError) {
           // If both JSON and text parsing fail, use generic message with status
           errorMessage = `Subscription failed (${response.status})`;
         }
       }
-      
+
       return NextResponse.json(
         { error: errorMessage },
         { status: response.status }
@@ -92,15 +105,18 @@ export async function POST(req: Request) {
     });
   } catch (error) {
     console.error('Error:', error);
-    
+
     // Handle timeout/abort errors specifically
-    if (error instanceof Error && (error.name === 'AbortError' || error.message.includes('aborted'))) {
+    if (
+      error instanceof Error &&
+      (error.name === 'AbortError' || error.message.includes('aborted'))
+    ) {
       return NextResponse.json(
         { error: 'Request timeout - please try again' },
         { status: 408 }
       );
     }
-    
+
     // Handle other errors
     return NextResponse.json(
       { error: 'Internal Server Error' },

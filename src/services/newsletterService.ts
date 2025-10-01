@@ -1,6 +1,6 @@
 export interface NewsletterResponse {
   message: string;
-  data?: any;
+  data?: unknown;
 }
 
 export const subscribeToNewsletter = async (
