@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 export const Hero = () => {
@@ -6,9 +6,10 @@ export const Hero = () => {
     <section className="mb-16">
       <div className="flex items-center gap-8 mb-8">
         <div className="flex-1">
-          <h1 className="text-5xl font-bold mb-4 text-white">Hi, Ansh here</h1>
+          <h1 className="text-5xl mb-1 font-bold text-white">Hi, Ansh here</h1>
+          <p className="mb-4">📍Rajasthan, India</p>
           <p className="text-xl text-gray-400">
-            Building open-source dev tools & automations 📍Rajasthan, India
+            Building open-source dev tools & automations.
           </p>
         </div>
         <Avatar className="w-24 h-24">
